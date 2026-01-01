@@ -1,0 +1,17 @@
+<h2>Travel Itineraries</h2>
+
+<app-destination-dropdown
+  [destinations]="destinations"
+  (selected)="onDestinationSelect($event)"
+>
+</app-destination-dropdown>
+
+<br /><br />
+
+@if (itineraries.length === 0) {
+<p>Select a destination to view available packages.</p>
+} @for (item of itineraries; track item.id) {
+<div class="card">
+  <app-itinerary-card [itinerary]="item"></app-itinerary-card>
+</div>
+}

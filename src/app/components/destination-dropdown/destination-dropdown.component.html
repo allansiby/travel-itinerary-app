@@ -1,0 +1,15 @@
+<label for="destinationSelect"><strong>Select Destination:</strong></label>
+<br /><br />
+
+<select
+  id="destinationSelect"
+  aria-label="Destination selection"
+  #destSelect
+  (change)="onChange(destSelect.value)"
+>
+  <option value="">-- Select --</option>
+
+  @for (d of destinations; track d) {
+  <option [value]="d">{{ d }}</option>
+  }
+</select>

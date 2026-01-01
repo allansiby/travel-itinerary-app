@@ -1,0 +1,19 @@
+<h3>{{ itinerary.place }}, {{ itinerary.country }}</h3>
+
+<p><strong>Food:</strong> {{ itinerary.food }}</p>
+<p>
+  <strong>Hotel:</strong> {{ itinerary.hotelType }} ({{
+    itinerary.nights
+  }}
+  nights)
+</p>
+<p><strong>Activities:</strong> {{ itinerary.activities.join(", ") }}</p>
+<p><strong>Flight Cost:</strong> ₹{{ itinerary.flightCost }}</p>
+
+<h4>Total: ₹{{ itinerary.totalCost }}</h4>
+
+<button (click)="addToCart()">Add to Cart</button>
+
+@if (showMessage) {
+<div class="toast">Package added to cart successfully</div>
+}
